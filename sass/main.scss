@@ -1,0 +1,13 @@
+@import "context";
+
+body {
+  padding-top: 50px;
+
+  .panel-gradebook {
+    width: 350px;
+  }
+
+  .list-group-item {
+    @include context(list-group-item);
+  }
+}
