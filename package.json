@@ -10,7 +10,8 @@
     "selenium-webdriver": "2.35.1",
     "optimist": "~0.6.0",
     "sockjs": "~0.3.7",
-    "lodash": "~2.2.1"
+    "lodash": "~2.2.1",
+    "winston": "~0.7.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
