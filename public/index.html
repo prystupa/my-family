@@ -8,6 +8,7 @@
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+    <script src="//cdn.sockjs.org/sockjs-0.3.min.js"></script>
     <script src="js/controllers.js"></script>
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
@@ -21,10 +22,14 @@
     </div>
 </div>
 
-<div class="panel panel-default panel-gradebook">
-    <div class="panel-heading">Sasha's Gradebook</div>
-    <ul class="list-group list-gradebook" ng-controller="GradebookController">
-        <li class="list-group-item {{grade.context? 'list-group-item-' + grade.context: ''}}" ng-repeat="grade in grades">
+<div class="panel panel-default panel-gradebook" ng-controller="GradebookController">
+    <div class="panel-heading">
+        <span>Sasha's Gradebook</span>
+        <small>({{updated? 'updated ' + updated: 'loading...'}})</small>
+    </div>
+    <ul class="list-group list-gradebook">
+        <li class="list-group-item {{grade.context? 'list-group-item-' + grade.context: ''}}"
+            ng-repeat="grade in grades">
             <span>{{grade.course}}</span>
             <span class="badge">{{grade.avg}}</span>
         </li>

@@ -5,9 +5,26 @@
  * Time: 10:53 PM
  */
 
-function GradebookController($scope, $http) {
+function GradebookController($scope, $filter) {
 
-    $http.get('/services/gradebook').success(function (data) {
-        $scope.grades = data;
-    });
+    var sock;
+
+    (function createSocket() {
+        sock = new SockJS('/services/rt/gradebook');
+        sock.onopen = function () {
+            console.log('opened gradebook socket');
+        };
+
+        sock.onmessage = function (e) {
+            var data = JSON.parse(e.data);
+            $scope.updated = $filter('date')(data.timestamp, 'short');
+            $scope.grades = data.grades;
+            $scope.$apply();
+        };
+
+        sock.onclose = function () {
+            console.log('lost gradebook socket, reconnecting...');
+            createSocket();
+        };
+    })();
 }
