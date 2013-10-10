@@ -14,6 +14,15 @@ module.exports = function (grunt) {
             all: ['Gruntfile.js', 'lib/**/*.js', 'public/**/*.js']
         },
 
+        mochaTest: {
+            test: {
+                options: {
+                    reporter: 'spec'
+                },
+                src: ['test/**/*.js']
+            }
+        },
+
         watch: {
             scripts: {
                 files: ['**/*.scss'],
@@ -25,6 +34,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-mocha-test');
 
-    grunt.registerTask('default', ['jshint', 'compass']);
+    grunt.registerTask('default', ['jshint', 'mochaTest', 'compass']);
 };
