@@ -11,7 +11,7 @@
     <script src="//cdn.sockjs.org/sockjs-0.3.min.js"></script>
     <script src="js/controllers.js"></script>
 
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
@@ -31,7 +31,7 @@
         <li class="list-group-item {{grade.context? 'list-group-item-' + grade.context: ''}}"
             ng-repeat="grade in grades">
             <span>{{grade.course}}</span>
-            <span class="badge">{{grade.avg}}</span>
+            <span class="badge">{{grade.avg? grade.avg + "%" : "No Grades"}}</span>
         </li>
     </ul>
 </div>

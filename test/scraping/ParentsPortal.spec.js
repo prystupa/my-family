@@ -24,17 +24,11 @@ describe("Parents Portal", function () {
     });
 
     describe('when I navigate to the portal', function () {
-        this.timeout(10000);
 
-        beforeEach(function (done) {
-            target.loadSite().then(function (a) {
-                done();
-            }, function () {
-                throw "Error!";
-            });
+        beforeEach(function () {
         });
 
-        it('shows the site', function () {
+        it('needs to be tested', function () {
 
         });
     });

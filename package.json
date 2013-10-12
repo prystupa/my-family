@@ -12,7 +12,7 @@
     "sockjs": "~0.3.7",
     "lodash": "~2.2.1",
     "winston": "~0.7.2",
-    "webdriverjs": "~0.7.14"
+    "mongoose": "~3.6.20"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
