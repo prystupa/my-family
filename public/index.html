@@ -6,6 +6,7 @@
 
     <title>My Home</title>
     <script src="//code.jquery.com/jquery.js"></script>
+    <script src="http://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
     <script src="//cdn.sockjs.org/sockjs-0.3.min.js"></script>
@@ -31,6 +32,7 @@
         <li class="list-group-item {{grade.context? 'list-group-item-' + grade.context: ''}}"
             ng-repeat="grade in grades">
             <span>{{grade.course}}</span>
+            <span class="sparkline" data-course="{{grade.course}}"></span>
             <span class="badge">{{grade.avg? grade.avg + "%" : "No Grades"}}</span>
         </li>
     </ul>
