@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "start": "node lib/app.js",
+        "start": "node lib/app.js --config ../my-family-config/config",
         "install-windows-service": "winser -i",
         "uninstall-windows-service": "winser -r"
     },
