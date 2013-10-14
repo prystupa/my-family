@@ -1,25 +1,28 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {
-    "express": "3.4.0",
-    "selenium-webdriver": "2.35.1",
-    "optimist": "~0.6.0",
-    "sockjs": "~0.3.7",
-    "lodash": "~2.2.1",
-    "winston": "~0.7.2",
-    "mongoose": "~3.6.20",
-    "q": "~0.9.7"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-compass": "~0.6.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-mocha-test": "~0.7.0"
-  }
+    "name": "my-family-server",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node lib/app.js",
+        "install-windows-service": "winser -i",
+        "uninstall-windows-service": "winser -r"
+    },
+    "dependencies": {
+        "express": "3.4.0",
+        "selenium-webdriver": "2.35.1",
+        "optimist": "~0.6.0",
+        "sockjs": "~0.3.7",
+        "lodash": "~2.2.1",
+        "winston": "~0.7.2",
+        "mongoose": "~3.6.20",
+        "q": "~0.9.7"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-compass": "~0.6.0",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-contrib-jshint": "~0.6.4",
+        "grunt-mocha-test": "~0.7.0",
+        "winser": "~0.1.6"
+    }
 }
